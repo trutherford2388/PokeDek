@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppRoutingModule } from './app.routing';
+import { ModalModule } from 'ng2-bootstrap';
+import { TooltipModule } from 'ng2-bootstrap';
 import { PokemonData } from './shared/pokemon-data';
 
 import { AppComponent } from './app.component';
@@ -21,6 +23,8 @@ import './shared/rxjs-extensions';
              FormsModule,
              HttpModule,
              InMemoryWebApiModule.forRoot(PokemonData),
+             ModalModule.forRoot(),
+             TooltipModule.forRoot(),
              AppRoutingModule
            ],
   declarations: [ AppComponent,
