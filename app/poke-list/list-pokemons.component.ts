@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../shared/pokemon';
 import { PokemonService } from '../shared/pokemon.service';
+import { error } from 'util';
 
 @Component({
     moduleId: module.id,
@@ -26,5 +27,16 @@ export class ListPokemonsComponent implements OnInit {
             },
             error => this.errorMessage = <any> error
         );
+    }
+
+    deletePokemon(pokemon: Pokemon) {
+        this._pokemonService.deletePokemon(pokemon)
+            .subscribe(
+                () => {},
+                error => this.errorMessage = <any> error,
+                () => {
+                    this.getPokemons();
+                }
+            );
     }
 }
