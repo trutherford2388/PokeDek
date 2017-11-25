@@ -24,3 +24,7 @@ em {
   float: right;
   color: #E05C65;
 }
+
+button, span > i, #type > option {
+  cursor: pointer;
+}
